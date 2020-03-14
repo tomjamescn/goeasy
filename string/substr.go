@@ -9,7 +9,7 @@ func Head(str string, n int) string {
 	} else if n >= len(runes) {
 		return str
 	} else {
-		return string(runes[:n-1])
+		return string(runes[:n])
 	}
 }
 
@@ -22,6 +22,6 @@ func Tail(str string, n int) string {
 	} else if n >= len(runes) {
 		return str
 	} else {
-		return string(runes[n-1:])
+		return string(runes[n:])
 	}
 }
