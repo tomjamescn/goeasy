@@ -1,9 +1,9 @@
-package sync
+package ezsync
 
-import gosync "sync"
+import "sync"
 
 type WaitGroupLimit struct {
-	*gosync.WaitGroup
+	*sync.WaitGroup
 	ch chan struct{}
 }
 
@@ -12,7 +12,7 @@ func NewWaitGroupLimit(limit int) *WaitGroupLimit {
 		panic("limit must greater than 0")
 	}
 	return &WaitGroupLimit{
-		WaitGroup: &gosync.WaitGroup{},
+		WaitGroup: &sync.WaitGroup{},
 		ch:        make(chan struct{}, limit),
 	}
 }
